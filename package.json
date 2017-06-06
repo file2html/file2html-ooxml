@@ -1,0 +1,32 @@
+{
+  "name": "file2html-ooxml",
+  "version": "0.1.0",
+  "description": "OOXML engine for file2html",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jest --no-cache --config=./node_modules/file2html-dev-tools/jest/config.json"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "file2html": "git@github.com:file2html/file2html.git",
+    "file2html-dev-tools": "git@github.com:file2html/file2html-dev-tools.git",
+    "file2html-xml-tools": "git@github.com:file2html/file2html-xml-tools.git",
+    "file2html-archive-tools": "git@github.com:file2html/file2html-archive-tools.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/file2html/file2html-ooxml.git"
+  },
+  "keywords": [
+    "file2html",
+    "archive",
+    "zip"
+  ],
+  "author": "webschik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/file2html/file2html-ooxml/issues"
+  },
+  "homepage": "https://github.com/file2html/file2html-ooxml#readme"
+}
