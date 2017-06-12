@@ -1,4 +1,5 @@
 import * as file2html from 'file2html';
+import {readArchive, Archive, ArchiveEntrySerialization, ArchiveEntry} from 'file2html-archive-tools';
 import parseCoreProps from './parse-core-props';
 import parseDocumentContent from './word/parse-document-content';
 import parseDocumentStyles from './word/parse-document-styles';
@@ -11,7 +12,7 @@ export default class OOXMLReader extends file2html.Reader {
         const {content} = fileInfo;
         const {byteLength} = content;
 
-        return file2html.readArchive(content).then((archive: file2html.Archive) => {
+        return readArchive(content).then((archive: Archive) => {
             const meta: file2html.FileMetaInformation = Object.assign({
                 fileType: file2html.FileTypes.document,
                 mimeType: '',
@@ -22,7 +23,7 @@ export default class OOXMLReader extends file2html.Reader {
                 modifiedAt: ''
             }, fileInfo.meta);
             const queue: Promise<any>[] = [];
-            const dataType: file2html.ArchiveEntrySerialization = 'string';
+            const dataType: ArchiveEntrySerialization = 'string';
             let styles: string = '';
             let content: string = '<div></div>';
 
@@ -34,7 +35,7 @@ export default class OOXMLReader extends file2html.Reader {
                 return Promise.reject(new Error('Invalid file format')) as any;
             }
 
-            archive.forEach((relativePath: string, entry: file2html.ArchiveEntry) => {
+            archive.forEach((relativePath: string, entry: ArchiveEntry) => {
                 switch (relativePath) {
                     case 'docProps/core.xml':
                         queue.push(entry.async(dataType).then((data: string) => parseCoreProps(data, meta)));
