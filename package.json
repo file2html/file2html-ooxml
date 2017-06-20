@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "file2html": "git@github.com:file2html/file2html.git",
-    "file2html-xml-tools": "git@github.com:file2html/file2html-xml-tools.git"
+    "file2html-xml-tools": "git@github.com:file2html/file2html-xml-tools.git",
+    "file2html-archive-tools": "git@github.com:file2html/file2html-archive-tools.git"
   },
   "devDependencies": {
-    "file2html-dev-tools": "git@github.com:file2html/file2html-dev-tools.git",
-    "file2html-archive-tools": "git@github.com:file2html/file2html-archive-tools.git"
+    "file2html-dev-tools": "git@github.com:file2html/file2html-dev-tools.git"
   },
   "repository": {
     "type": "git",
