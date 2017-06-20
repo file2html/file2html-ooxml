@@ -2,7 +2,8 @@
   "name": "file2html-ooxml",
   "version": "0.1.0",
   "description": "OOXML engine for file2html",
-  "main": "lib/index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "test": "./node_modules/.bin/jest --no-cache --config=./node_modules/file2html-dev-tools/jest/config.json",
     "lint": "./node_modules/.bin/tslint \"src/**/*.ts\" \"test/unit/**/*.ts\"",
