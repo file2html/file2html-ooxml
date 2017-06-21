@@ -1,7 +1,7 @@
 import {parseXML} from 'file2html-xml-tools/lib/sax';
 import matchStyleTag from './match-style-tag';
 import twipToPx from '../twip-to-px';
-import stringifyStylesheet from './stringify-stylesheet';
+import stringifyStylesheet from '../stringify-stylesheet';
 
 interface HTMLTags {
     [key: string]: string;
