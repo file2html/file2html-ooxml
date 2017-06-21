@@ -32,9 +32,7 @@ describe('OOXML', () => {
                         .Heading1 .r{font-weight:bold;color:#365F91;font-size:18px;}
                         .Heading2{margin-top:13px;text-indent:0px;}
                         .Heading2 .r{font-weight:bold;color:#4F81BD;font-size:17px;}
-                        .DefaultParagraphFont{}
                         .TableNormal{margin-left:0px;}
-                        .NoList{}
                         .Heading1Char{font-family:Ubuntu;font-weight:bold;color:#365F91;font-size:18px;}
                         .Title{border-bottom:1px solid #4F81BD;line-height:1;margin-bottom:20px;text-indent:0px;}
                         .Title .r{color:#17365D;font-size:34px;}
@@ -65,8 +63,6 @@ describe('OOXML', () => {
                         .MediumShading2-Accent5 .r .r .r .r .r{color:#FFFFFF;border-top:3px solid currentColor;border-bottom:3px solid currentColor;}
                         .TableGrid{line-height:1;margin-left:0px;border-top:0px solid #000000;border-left:0px solid #000000;border-bottom:0px solid #000000;border-right:0px solid #000000;}
                         .NoSpacing{line-height:1;}
-                        .NoSpacing .r{}
-                        .NoSpacingChar{}
                         .BalloonText{line-height:1;}
                         .BalloonText .r{font-family:Tahoma;font-size:10px;}
                         .BalloonTextChar{font-family:Tahoma;font-size:10px;}
@@ -104,7 +100,6 @@ describe('OOXML', () => {
                         .TOC9{margin-left:128px;}
                         .TOC9 .r{font-size:13px;}
                         .TOCHeading{text-align:left;}
-                        .TOCHeading .r{}
                     `.trim().replace(/[ ]{2,}/g, '') + '\n');
                     /* tslint:enable */
                 });

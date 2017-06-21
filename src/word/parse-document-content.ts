@@ -1,6 +1,7 @@
 import {parseXML} from 'file2html-xml-tools/lib/sax';
 import matchStyleTag from './match-style-tag';
 import twipToPx from '../twip-to-px';
+import stringifyStylesheet from './stringify-stylesheet';
 
 interface HTMLTags {
     [key: string]: string;
@@ -222,16 +223,8 @@ export default function parseDocumentContent (
         }
     });
 
-    let styles: string = '';
-
-    for (const selector in stylesheet) {
-        if (stylesheet.hasOwnProperty(selector)) {
-            styles += `${ selector }{${ stylesheet[selector] }}\n`;
-        }
-    }
-
     return {
-        styles: styles,
+        styles: stringifyStylesheet(stylesheet),
         content: `<div>${ content }</div>`
     };
 }

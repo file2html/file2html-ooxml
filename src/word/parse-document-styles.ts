@@ -1,5 +1,6 @@
 import {parseXML} from 'file2html-xml-tools/lib/sax';
 import matchStyleTag from './match-style-tag';
+import stringifyStylesheet from './stringify-stylesheet';
 
 export default function parseDocumentStyles (fileContent: string): string {
     const stylesheet: {[key: string]: string} = {
@@ -61,13 +62,5 @@ export default function parseDocumentStyles (fileContent: string): string {
         }
     });
 
-    let styles: string = '';
-
-    for (const selector in stylesheet) {
-        if (stylesheet.hasOwnProperty(selector)) {
-            styles += `${ selector }{${ stylesheet[selector] }}\n`;
-        }
-    }
-
-    return styles;
+    return stringifyStylesheet(stylesheet);
 }
