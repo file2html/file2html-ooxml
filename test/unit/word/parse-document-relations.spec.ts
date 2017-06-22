@@ -13,7 +13,9 @@ describe('OOXML', () => {
 
                         return {
                             async (dataType: string) {
-                                return Promise.resolve(dataType);
+                                expect(dataType).toBe('base64');
+
+                                return Promise.resolve('base64Data');
                             }
                         };
                     }
@@ -21,9 +23,9 @@ describe('OOXML', () => {
 
                 return parseDocumentRelations(fileContent, archive).then((documentRelations) => {
                     expect(documentRelations).toEqual({
-                        rId10: 'base64',
-                        rId11: 'base64',
-                        rId12: 'base64'
+                        rId10: 'data:image/png;base64,base64Data',
+                        rId11: 'data:image/png;base64,base64Data',
+                        rId12: 'data:image/png;base64,base64Data'
                     });
                 });
             });
