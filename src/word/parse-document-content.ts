@@ -104,11 +104,11 @@ export default function parseDocumentContent (
                     isTextContentEnabled = true;
                     break;
                 case 'a:blip':
-                    const relationId: string = attributes['r:embed'];
-                    const src: string = relations[relationId];
+                    const relId: string = attributes['r:embed'];
+                    const src: string = relations[relId];
 
                     if (src) {
-                        content += `${ openedHTMLTags.img } src="${ src }"/${ unfinishedTagEnding }`;
+                        content += `${ openedHTMLTags.img } id="${ relId }" src="${ src }"/${ unfinishedTagEnding }`;
                     }
                     break;
                 case 'w:rPr':
