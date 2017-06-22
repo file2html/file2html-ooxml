@@ -8,7 +8,9 @@ describe('OOXML', () => {
             it('should parse OOXML _rels/document.xml.rels', () => {
                 const fileContent = fs.readFileSync(path.resolve(__dirname, './document.xml.rels')).toString();
                 const archive: any = {
-                    file () {
+                    file (path: string) {
+                        expect(path.indexOf('word')).toBe(0);
+
                         return {
                             async (dataType: string) {
                                 return Promise.resolve(dataType);

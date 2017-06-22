@@ -15,7 +15,7 @@ export default function parseDocumentRelations (fileContent: string, archive: Ar
                 const {Id: id, Target: path} = attrs;
 
                 if (id && path.includes('media/')) {
-                    queue.push(archive.file(path).async('base64').then((data: string) => {
+                    queue.push(archive.file(`word/${ path }`).async('base64').then((data: string) => {
                         relations[id] = data;
                     }));
                 }
