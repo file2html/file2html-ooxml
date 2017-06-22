@@ -38,7 +38,14 @@ export default function textAlignmentStyle (
             color = '#' + color;
         }
 
-        style += ruleName + ':' + Math.ceil(ptToPx(size, 8)) + 'px ' + type + ' ' + color + ';';
+        let borderWidth: number = Math.ceil(ptToPx(size, 8));
+
+        // 1px is a minimal border width
+        if (size && size !== '0' && !borderWidth) {
+            borderWidth = 1;
+        }
+
+        style += `${ ruleName }:${ borderWidth }px ${ type } ${ color };`;
     }
 
     return style;

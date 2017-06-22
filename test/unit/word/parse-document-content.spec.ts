@@ -77,7 +77,7 @@ describe('OOXML', () => {
                         .element-70{font-family:Ubuntu Mono;}
                         .element-73 .r{font-weight:bold;}
                         .element-74{font-weight:bold;}
-                        .element-75{border-right:0px solid currentColor;background-color:#DDDDDD;text-align:right;}
+                        .element-75{border-right:1px solid currentColor;background-color:#DDDDDD;text-align:right;}
                         .element-77{margin-top:40px;margin-left:48px;}
                         .element-132{width:100%;}
                         .element-135 .r{font-size:14px;}
@@ -142,137 +142,137 @@ describe('OOXML', () => {
                         .element-380{text-align:center;}
                         .element-381{text-align:center;}
                         .element-385{text-align:center;}
-                        .element-386{border-bottom:0px solid #365F91;}
-                        .element-391{border-bottom:0px solid #7F7F7F;}
-                        .element-396{border-bottom:0px solid #7F7F7F;}
-                        .element-401{border-bottom:0px solid #7F7F7F;}
-                        .element-406{border-bottom:0px solid #7F7F7F;}
-                        .element-411{border-bottom:0px solid #7F7F7F;}
-                        .element-416{border-bottom:0px solid #365F91;}
+                        .element-386{border-bottom:1px solid #365F91;}
+                        .element-391{border-bottom:1px solid #7F7F7F;}
+                        .element-396{border-bottom:1px solid #7F7F7F;}
+                        .element-401{border-bottom:1px solid #7F7F7F;}
+                        .element-406{border-bottom:1px solid #7F7F7F;}
+                        .element-411{border-bottom:1px solid #7F7F7F;}
+                        .element-416{border-bottom:1px solid #365F91;}
                         .element-419{text-align:center;}
-                        .element-420{border-top:0px solid #365F91;border-right:4px solid #365F91;}
+                        .element-420{border-top:1px solid #365F91;border-right:4px solid #365F91;}
                         .element-422{border-left:4px solid #365F91;}
-                        .element-424{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-424{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-426{border-left:4px solid #7F7F7F;}
-                        .element-428{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-428{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-430{border-left:4px solid #7F7F7F;}
-                        .element-432{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-432{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-434{border-left:4px solid #7F7F7F;}
-                        .element-436{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-436{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-438{border-left:4px solid #7F7F7F;}
-                        .element-440{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-440{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-442{border-left:4px solid #7F7F7F;}
-                        .element-444{border-top:0px solid #365F91;border-right:4px solid #365F91;}
+                        .element-444{border-top:1px solid #365F91;border-right:4px solid #365F91;}
                         .element-447{text-align:center;}
-                        .element-448{border-bottom:0px solid #365F91;}
-                        .element-452{border-bottom:0px solid #7F7F7F;}
-                        .element-456{border-bottom:0px solid #7F7F7F;}
-                        .element-460{border-bottom:0px solid #7F7F7F;}
-                        .element-464{border-bottom:0px solid #7F7F7F;}
-                        .element-468{border-bottom:0px solid #7F7F7F;}
-                        .element-472{border-bottom:0px solid #365F91;}
+                        .element-448{border-bottom:1px solid #365F91;}
+                        .element-452{border-bottom:1px solid #7F7F7F;}
+                        .element-456{border-bottom:1px solid #7F7F7F;}
+                        .element-460{border-bottom:1px solid #7F7F7F;}
+                        .element-464{border-bottom:1px solid #7F7F7F;}
+                        .element-468{border-bottom:1px solid #7F7F7F;}
+                        .element-472{border-bottom:1px solid #365F91;}
                         .element-474{text-align:center;}
-                        .element-475{border-top:0px solid #365F91;border-right:4px solid #365F91;}
+                        .element-475{border-top:1px solid #365F91;border-right:4px solid #365F91;}
                         .element-478{border-left:4px solid #365F91;}
-                        .element-480{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-480{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-483{border-left:4px solid #7F7F7F;}
-                        .element-485{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-485{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-488{border-left:4px solid #7F7F7F;}
-                        .element-490{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-490{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-493{border-left:4px solid #7F7F7F;}
-                        .element-495{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-495{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-498{border-left:4px solid #7F7F7F;}
-                        .element-500{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-500{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-503{border-left:4px solid #7F7F7F;}
-                        .element-505{border-top:0px solid #365F91;border-right:4px solid #365F91;}
+                        .element-505{border-top:1px solid #365F91;border-right:4px solid #365F91;}
                         .element-508{text-align:center;}
-                        .element-509{border-bottom:0px solid #365F91;}
-                        .element-513{border-bottom:0px solid #7F7F7F;}
-                        .element-517{border-bottom:0px solid #7F7F7F;}
-                        .element-521{border-bottom:0px solid #7F7F7F;}
-                        .element-525{border-bottom:0px solid #7F7F7F;}
-                        .element-529{border-bottom:0px solid #7F7F7F;}
-                        .element-533{border-bottom:0px solid #365F91;}
+                        .element-509{border-bottom:1px solid #365F91;}
+                        .element-513{border-bottom:1px solid #7F7F7F;}
+                        .element-517{border-bottom:1px solid #7F7F7F;}
+                        .element-521{border-bottom:1px solid #7F7F7F;}
+                        .element-525{border-bottom:1px solid #7F7F7F;}
+                        .element-529{border-bottom:1px solid #7F7F7F;}
+                        .element-533{border-bottom:1px solid #365F91;}
                         .element-535{text-align:center;}
-                        .element-536{border-top:0px solid #365F91;border-right:4px solid #365F91;}
+                        .element-536{border-top:1px solid #365F91;border-right:4px solid #365F91;}
                         .element-539{border-left:4px solid #365F91;}
-                        .element-541{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-541{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-544{border-left:4px solid #7F7F7F;}
-                        .element-546{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-546{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-549{border-left:4px solid #7F7F7F;}
-                        .element-551{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-551{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-554{border-left:4px solid #7F7F7F;}
-                        .element-556{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-556{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-559{border-left:4px solid #7F7F7F;}
-                        .element-561{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-561{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-564{border-left:4px solid #7F7F7F;}
-                        .element-566{border-top:0px solid #365F91;border-right:4px solid #365F91;}
+                        .element-566{border-top:1px solid #365F91;border-right:4px solid #365F91;}
                         .element-569{text-align:center;}
-                        .element-570{border-bottom:0px solid #365F91;}
-                        .element-574{border-bottom:0px solid #7F7F7F;}
-                        .element-578{border-bottom:0px solid #7F7F7F;}
-                        .element-582{border-bottom:0px solid #7F7F7F;}
-                        .element-586{border-bottom:0px solid #7F7F7F;}
-                        .element-590{border-bottom:0px solid #7F7F7F;}
-                        .element-594{border-bottom:0px solid #365F91;}
+                        .element-570{border-bottom:1px solid #365F91;}
+                        .element-574{border-bottom:1px solid #7F7F7F;}
+                        .element-578{border-bottom:1px solid #7F7F7F;}
+                        .element-582{border-bottom:1px solid #7F7F7F;}
+                        .element-586{border-bottom:1px solid #7F7F7F;}
+                        .element-590{border-bottom:1px solid #7F7F7F;}
+                        .element-594{border-bottom:1px solid #365F91;}
                         .element-596{text-align:center;}
-                        .element-597{border-top:0px solid #365F91;border-right:4px solid #365F91;}
+                        .element-597{border-top:1px solid #365F91;border-right:4px solid #365F91;}
                         .element-600{border-left:4px solid #365F91;}
-                        .element-602{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-602{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-605{border-left:4px solid #7F7F7F;}
-                        .element-607{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-607{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-610{border-left:4px solid #7F7F7F;}
-                        .element-612{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-612{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-615{border-left:4px solid #7F7F7F;}
-                        .element-617{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-617{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-620{border-left:4px solid #7F7F7F;}
-                        .element-622{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-622{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-625{border-left:4px solid #7F7F7F;}
-                        .element-627{border-top:0px solid #365F91;border-right:4px solid #365F91;}
+                        .element-627{border-top:1px solid #365F91;border-right:4px solid #365F91;}
                         .element-630{text-align:center;}
-                        .element-631{border-bottom:0px solid #365F91;}
-                        .element-635{border-bottom:0px solid #7F7F7F;}
-                        .element-639{border-bottom:0px solid #7F7F7F;}
-                        .element-643{border-bottom:0px solid #7F7F7F;}
-                        .element-647{border-bottom:0px solid #7F7F7F;}
-                        .element-651{border-bottom:0px solid #7F7F7F;}
-                        .element-655{border-bottom:0px solid #365F91;}
+                        .element-631{border-bottom:1px solid #365F91;}
+                        .element-635{border-bottom:1px solid #7F7F7F;}
+                        .element-639{border-bottom:1px solid #7F7F7F;}
+                        .element-643{border-bottom:1px solid #7F7F7F;}
+                        .element-647{border-bottom:1px solid #7F7F7F;}
+                        .element-651{border-bottom:1px solid #7F7F7F;}
+                        .element-655{border-bottom:1px solid #365F91;}
                         .element-657{text-align:center;}
-                        .element-658{border-top:0px solid #365F91;border-right:4px solid #365F91;}
+                        .element-658{border-top:1px solid #365F91;border-right:4px solid #365F91;}
                         .element-661{border-left:4px solid #365F91;}
-                        .element-663{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-663{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-666{border-left:4px solid #7F7F7F;}
-                        .element-668{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-668{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-671{border-left:4px solid #7F7F7F;}
-                        .element-673{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-673{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-676{border-left:4px solid #7F7F7F;}
-                        .element-678{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-678{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-681{border-left:4px solid #7F7F7F;}
-                        .element-683{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-683{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-686{border-left:4px solid #7F7F7F;}
-                        .element-688{border-top:0px solid #365F91;border-right:4px solid #365F91;}
+                        .element-688{border-top:1px solid #365F91;border-right:4px solid #365F91;}
                         .element-691{text-align:center;}
-                        .element-692{border-bottom:0px solid #365F91;}
-                        .element-696{border-bottom:0px solid #7F7F7F;}
-                        .element-700{border-bottom:0px solid #7F7F7F;}
-                        .element-704{border-bottom:0px solid #7F7F7F;}
-                        .element-708{border-bottom:0px solid #7F7F7F;}
-                        .element-712{border-bottom:0px solid #7F7F7F;}
-                        .element-716{border-bottom:0px solid #365F91;}
+                        .element-692{border-bottom:1px solid #365F91;}
+                        .element-696{border-bottom:1px solid #7F7F7F;}
+                        .element-700{border-bottom:1px solid #7F7F7F;}
+                        .element-704{border-bottom:1px solid #7F7F7F;}
+                        .element-708{border-bottom:1px solid #7F7F7F;}
+                        .element-712{border-bottom:1px solid #7F7F7F;}
+                        .element-716{border-bottom:1px solid #365F91;}
                         .element-718{text-align:center;}
-                        .element-719{border-top:0px solid #365F91;border-right:4px solid #365F91;}
+                        .element-719{border-top:1px solid #365F91;border-right:4px solid #365F91;}
                         .element-722{border-left:4px solid #365F91;}
-                        .element-724{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-724{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-727{border-left:4px solid #7F7F7F;}
-                        .element-729{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-729{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-731{border-left:4px solid #7F7F7F;}
-                        .element-733{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-733{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-735{border-left:4px solid #7F7F7F;}
-                        .element-737{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-737{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-739{border-left:4px solid #7F7F7F;}
-                        .element-741{border-top:0px solid #7F7F7F;border-right:4px solid #7F7F7F;}
+                        .element-741{border-top:1px solid #7F7F7F;border-right:4px solid #7F7F7F;}
                         .element-743{border-left:4px solid #7F7F7F;}
-                        .element-745{border-top:0px solid #365F91;border-right:4px solid #365F91;}
+                        .element-745{border-top:1px solid #365F91;border-right:4px solid #365F91;}
                         .element-761{float:left;line-height:3.9625;vertical-align:baseline;}
                         .element-761 .r{font-size:78px;}
                         .element-762{font-size:78px;}

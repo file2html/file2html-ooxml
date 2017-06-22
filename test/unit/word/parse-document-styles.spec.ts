@@ -61,7 +61,7 @@ describe('OOXML', () => {
                         .MediumShading2-Accent5 .r .r .r{font-weight:bold;color:#FFFFFF;border-bottom:3px solid currentColor;background-color:#4BACC6;}
                         .MediumShading2-Accent5 .r .r .r .r{font-weight:bold;color:#FFFFFF;background-color:#4BACC6;background-color:#D8D8D8;background-color:#D8D8D8;border-top:3px solid currentColor;border-bottom:3px solid currentColor;}
                         .MediumShading2-Accent5 .r .r .r .r .r{color:#FFFFFF;border-top:3px solid currentColor;border-bottom:3px solid currentColor;}
-                        .TableGrid{line-height:1;margin-left:0px;border-top:0px solid #000000;border-left:0px solid #000000;border-bottom:0px solid #000000;border-right:0px solid #000000;}
+                        .TableGrid{line-height:1;margin-left:0px;border-top:1px solid #000000;border-left:1px solid #000000;border-bottom:1px solid #000000;border-right:1px solid #000000;}
                         .NoSpacing{line-height:1;}
                         .BalloonText{line-height:1;}
                         .BalloonText .r{font-family:Tahoma;font-size:10px;}
