@@ -14,13 +14,14 @@ interface ElementInfo {
 
 export interface DocumentContentParsingOptions {
     prettify?: boolean;
+    relations: {[key: string]: string};
 }
 
 export default function parseDocumentContent (
     fileContent: string,
-    options?: DocumentContentParsingOptions
+    options: DocumentContentParsingOptions
 ): {styles: string; content: string;} {
-    const prettify: boolean = Boolean(options && options.prettify);
+    const {relations, prettify = false} = options;
     const prettifyTagStart: (tag: string) => string = (tag: string) => prettify ? `\n${ tag }` : tag;
     const openedHTMLTags: HTMLTags = {
         'w:p': prettifyTagStart('<p'),
@@ -31,6 +32,7 @@ export default function parseDocumentContent (
         'w:hyperlink': prettifyTagStart('<a'),
         'w:tr': prettifyTagStart('<tr'),
         'w:tc': prettifyTagStart('<td'),
+        img: prettifyTagStart('<img'),
         a: prettifyTagStart('<a'),
         caption: prettifyTagStart('<caption'),
         bookmark: prettifyTagStart('<a name="')
@@ -100,6 +102,14 @@ export default function parseDocumentContent (
                     break;
                 case 'w:t':
                     isTextContentEnabled = true;
+                    break;
+                case 'a:blip':
+                    const relationId: string = attributes['r:embed'];
+                    const src: string = relations[relationId];
+
+                    if (src) {
+                        content += `${ openedHTMLTags.img } src="${ src }"/${ unfinishedTagEnding }`;
+                    }
                     break;
                 case 'w:rPr':
                     if (!isTextTag) {

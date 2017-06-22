@@ -24,7 +24,10 @@ describe('OOXML', () => {
         describe('parseDocumentContent()', () => {
             it('should parse OOXML document.xml', () => {
                 return readFile(path.resolve(__dirname, './document.xml')).then((originContent: string) => {
-                    const {content, styles} = parseDocumentContent(originContent, {prettify: true});
+                    const {content, styles} = parseDocumentContent(originContent, {
+                        relations: {},
+                        prettify: true
+                    });
 
                     function getTagsQuantity (content: string, pattern: RegExp) {
                         const tagNames: {[key: string]: number} = {};
