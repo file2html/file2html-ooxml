@@ -1,11 +1,13 @@
 import * as file2html from 'file2html';
-import {readArchive, Archive, ArchiveEntrySerialization} from 'file2html-archive-tools';
+import * as mime from 'file2html/lib/mime';
+import {errorsNamespace} from 'file2html/lib/errors';
+import {readArchive, Archive, ArchiveEntry, ArchiveEntrySerialization} from 'file2html-archive-tools';
 import parseCoreProps from './parse-core-props';
 import parseDocumentContent from './word/parse-document-content';
 import parseDocumentStyles from './word/parse-document-styles';
 import parseDocumentRelations from './word/parse-document-relations';
 
-const documentMimeType: string = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+const documentMimeType: string = mime.lookup('.docx');
 const supportedMimeTypes: string[] = [documentMimeType];
 
 export default class OOXMLReader extends file2html.Reader {
@@ -40,27 +42,50 @@ export default class OOXMLReader extends file2html.Reader {
             }
 
             if (isDocument) {
-                queue.push(archive.file('word/_rels/document.xml.rels').async(dataType).then((data: string) => {
-                    return parseDocumentRelations(data, archive).then((documentRelations) => {
-                        relations = documentRelations;
-                    });
-                }));
+                const relationsFile: ArchiveEntry = archive.file('word/_rels/document.xml.rels');
+
+                if (relationsFile) {
+                    queue.push(relationsFile.async(dataType).then((data: string) => {
+                        return parseDocumentRelations(data, archive).then((documentRelations) => {
+                            relations = documentRelations;
+                        });
+                    }));
+                }
             }
 
             return Promise.all(queue).then(() => {
                 const queue: Promise<any>[] = [];
+                const invalidFileError: string = `${ errorsNamespace }.invalidFile`;
+                let fileEntry: ArchiveEntry = archive.file('docProps/core.xml');
 
-                queue.push(archive.file('docProps/core.xml').async(dataType).then((data: string) => {
+                if (!fileEntry) {
+                    return Promise.reject(new Error(invalidFileError)) as any;
+                }
+
+                queue.push(fileEntry.async(dataType).then((data: string) => {
                     return parseCoreProps(data, meta);
                 }));
 
                 if (isDocument) {
-                    queue.push(archive.file('word/styles.xml').async(dataType).then((data: string) => {
+                    fileEntry = archive.file('word/styles.xml');
+
+                    if (!fileEntry) {
+                        return Promise.reject(new Error(invalidFileError)) as any;
+                    }
+
+                    queue.push(fileEntry.async(dataType).then((data: string) => {
                         return parseDocumentStyles(data);
                     }).then((documentStyles: string) => {
                         styles += '\n' + documentStyles;
                     }));
-                    queue.push(archive.file('word/document.xml').async(dataType).then((data: string) => {
+
+                    fileEntry = archive.file('word/document.xml');
+
+                    if (!fileEntry) {
+                        return Promise.reject(new Error(invalidFileError)) as any;
+                    }
+
+                    queue.push(fileEntry.async(dataType).then((data: string) => {
                         return parseDocumentContent(data, {
                             relations
                         });
