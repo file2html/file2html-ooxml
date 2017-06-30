@@ -15,6 +15,7 @@
     "file2html-archive-tools": "git@github.com:file2html/file2html-archive-tools.git"
   },
   "devDependencies": {
+    "css-validator": "^0.8.0",
     "file2html-dev-tools": "git@github.com:file2html/file2html-dev-tools.git"
   },
   "repository": {
