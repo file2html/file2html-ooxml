@@ -22,7 +22,7 @@ import textAlignmentStyle from './styles/text-alignment';
 
 export interface TagStyleMatchProps {
     tagName: string;
-    attributes: {[key: string]: string;};
+    attributes: {[key: string]: string};
     styles: string;
 }
 

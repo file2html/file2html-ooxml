@@ -18,7 +18,7 @@ describe('OOXML', () => {
                     <dcterms:modified xsi:type="dcterms:W3CDTF">2013-06-20T06:14:00Z</dcterms:modified>
                 </cp:coreProperties>
             `;
-            const fileMetaInformation: {[key: string]: any;} = {};
+            const fileMetaInformation: {[key: string]: any} = {};
 
             parseCoreProps(fileContent, fileMetaInformation as any);
 

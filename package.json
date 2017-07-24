@@ -4,19 +4,23 @@
   "description": "OOXML engine for file2html",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "files": [
+    "lib/*.*",
+    "lib/**/*.*"
+  ],
   "scripts": {
     "test": "./node_modules/.bin/jest --no-cache --config=./node_modules/file2html-dev-tools/jest/config.json",
     "lint": "./node_modules/.bin/tslint \"src/**/*.ts\" \"test/unit/**/*.ts\"",
     "build": "npm run lint && rm -rf lib && ./node_modules/.bin/tsc"
   },
   "dependencies": {
-    "file2html": "git@github.com:file2html/file2html.git",
-    "file2html-xml-tools": "git@github.com:file2html/file2html-xml-tools.git",
-    "file2html-archive-tools": "git@github.com:file2html/file2html-archive-tools.git"
+    "file2html": "^0.1.5",
+    "file2html-xml-tools": "git+https://github.com/file2html/file2html-xml-tools.git#v1.0.0",
+    "file2html-archive-tools": "git+https://github.com/file2html/file2html-archive-tools.git#v1.0.0"
   },
   "devDependencies": {
     "css-validator": "^0.8.0",
-    "file2html-dev-tools": "git@github.com:file2html/file2html-dev-tools.git"
+    "file2html-dev-tools": "git+https://github.com/file2html/file2html-dev-tools.git#v1.0.0"
   },
   "repository": {
     "type": "git",

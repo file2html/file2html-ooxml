@@ -20,7 +20,7 @@ export interface DocumentContentParsingOptions {
 export default function parseDocumentContent (
     fileContent: string,
     options: DocumentContentParsingOptions
-): {styles: string; content: string;} {
+): {styles: string; content: string} {
     const {relations, prettify = false} = options;
     const prettifyTagStart: (tag: string) => string = (tag: string) => prettify ? `\n${ tag }` : tag;
     const openedHTMLTags: HTMLTags = {
@@ -52,7 +52,7 @@ export default function parseDocumentContent (
     };
     const newLineTag: string = '<br/>';
     const unfinishedTagEnding: string = '>';
-    const stylesheet: {[key: string]: string;} = {};
+    const stylesheet: {[key: string]: string} = {};
     let content: string = '';
     let isTextTag: boolean;
     let isUnfinishedTag: boolean;

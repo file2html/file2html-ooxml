@@ -89,7 +89,7 @@ export default class OOXMLReader extends file2html.Reader {
                         return parseDocumentContent(data, {
                             relations
                         });
-                    }).then((data: {styles: string; content: string;}) => {
+                    }).then((data: {styles: string; content: string}) => {
                         styles += '\n' + data.styles;
                         content = data.content;
                     }));
