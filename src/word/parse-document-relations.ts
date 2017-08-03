@@ -1,5 +1,5 @@
 import {parseXML} from 'file2html-xml-tools/lib/sax';
-import {Archive} from 'file2html-archive-tools';
+import {Archive, ArchiveEntry} from 'file2html-archive-tools';
 import {lookup} from 'file2html/lib/mime';
 
 export interface Relations {
@@ -16,9 +16,13 @@ export default function parseDocumentRelations (fileContent: string, archive: Ar
                 const {Id: id, Target: path} = attrs;
 
                 if (id && path.includes('media/')) {
-                    queue.push(archive.file(`word/${ path }`).async('base64').then((base64: string) => {
-                        relations[id] = `data:${ lookup(path) };base64,${ base64 }`;
-                    }));
+                    const fileEntry: ArchiveEntry = archive.file(`word/${ path }`);
+
+                    if (fileEntry) {
+                        queue.push(fileEntry.async('base64').then((base64: string) => {
+                            relations[id] = `data:${ lookup(path) };base64,${ base64 }`;
+                        }));
+                    }
                 }
             }
         }

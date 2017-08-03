@@ -1,6 +1,6 @@
 {
   "name": "file2html-ooxml",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OOXML engine for file2html",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -14,7 +14,7 @@
     "build": "npm run lint && rm -rf lib && ./node_modules/.bin/tsc"
   },
   "dependencies": {
-    "file2html": "^0.1.5",
+    "file2html": "^0.1.6",
     "file2html-xml-tools": "git+https://github.com/file2html/file2html-xml-tools.git#v1.0.0",
     "file2html-archive-tools": "git+https://github.com/file2html/file2html-archive-tools.git#v1.0.0"
   },
