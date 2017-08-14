@@ -53,13 +53,20 @@ export default class OOXMLReader extends file2html.Reader {
                 }
             }
 
+            function getInvalidFileError () {
+                const archiveTree: string = Object.keys(archive).join(',\n');
+
+                return Promise.reject(new Error(
+                    `${ errorsNamespace }.invalidFile. Archive: [${ archiveTree }]`
+                )) as any;
+            }
+
             return Promise.all(queue).then(() => {
                 const queue: Promise<any>[] = [];
-                const invalidFileError: string = `${ errorsNamespace }.invalidFile`;
                 let fileEntry: ArchiveEntry = archive.file('docProps/core.xml');
 
                 if (!fileEntry) {
-                    return Promise.reject(new Error(invalidFileError)) as any;
+                    return getInvalidFileError();
                 }
 
                 queue.push(fileEntry.async(dataType).then((data: string) => {
@@ -70,7 +77,7 @@ export default class OOXMLReader extends file2html.Reader {
                     fileEntry = archive.file('word/styles.xml');
 
                     if (!fileEntry) {
-                        return Promise.reject(new Error(invalidFileError)) as any;
+                        return getInvalidFileError();
                     }
 
                     queue.push(fileEntry.async(dataType).then((data: string) => {
@@ -82,7 +89,7 @@ export default class OOXMLReader extends file2html.Reader {
                     fileEntry = archive.file('word/document.xml');
 
                     if (!fileEntry) {
-                        return Promise.reject(new Error(invalidFileError)) as any;
+                        return getInvalidFileError();
                     }
 
                     queue.push(fileEntry.async(dataType).then((data: string) => {
