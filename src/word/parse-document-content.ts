@@ -120,9 +120,10 @@ export default function parseDocumentContent (
                 case 'w:rStyle':
                 case 'w:tblStyle':
                     const elClassName: string = attributes['w:val'];
+                    const elementInfo: ElementInfo = elementsInfo[elementIndex];
 
-                    if (elClassName) {
-                        elementsInfo[elementIndex].className += ` ${ elClassName }`;
+                    if (elClassName && elementInfo) {
+                        elementInfo.className += ` ${ elClassName }`;
                     }
                     break;
                 case 'w:bookmarkStart':
@@ -141,11 +142,17 @@ export default function parseDocumentContent (
                     const colSpan: string = attributes['w:val'];
 
                     if (colSpan && elementIndex >= 0) {
-                        const {tagNameEnding} = elementsInfo[elementIndex];
+                        const elementInfo: ElementInfo = elementsInfo[elementIndex];
 
-                        content = (
-                            content.slice(0, tagNameEnding) + ` colspan="${ colSpan }"` + content.slice(tagNameEnding)
-                        );
+                        if (elementInfo) {
+                            const {tagNameEnding} = elementInfo;
+
+                            content = (
+                                content.slice(0, tagNameEnding) +
+                                ` colspan="${ colSpan }"` +
+                                content.slice(tagNameEnding)
+                            );
+                        }
                     }
                     break;
                 case 'w:tblCaption':
@@ -197,12 +204,19 @@ export default function parseDocumentContent (
                 case 'w:tr':
                 case 'w:tc':
                     if (elementIndex >= 0) {
-                        const {tagNameEnding, className} = elementsInfo[elementIndex];
+                        const elementInfo: ElementInfo = elementsInfo[elementIndex];
 
-                        content = (
-                            content.slice(0, tagNameEnding) + ` class="${ className }"` + content.slice(tagNameEnding)
-                        );
-                        delete elementsInfo[elementIndex];
+                        if (elementInfo) {
+                            const {tagNameEnding, className} = elementInfo;
+
+                            content = (
+                                content.slice(0, tagNameEnding) +
+                                ` class="${ className }"` +
+                                content.slice(tagNameEnding)
+                            );
+                            delete elementsInfo[elementIndex];
+                        }
+
                         elementIndex--;
                     }
                     isTextTag = false;

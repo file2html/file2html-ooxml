@@ -1,6 +1,6 @@
 {
   "name": "file2html-ooxml",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "OOXML engine for file2html",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
