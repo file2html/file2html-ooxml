@@ -32,13 +32,21 @@ export default class OOXMLReader extends file2html.Reader {
             let isDocument: boolean = false;
             let relations: {[key: string]: string} = {};
 
+            function getInvalidFileError () {
+                const archiveTree: string = Object.keys(archive.files || {}).join(',\n');
+
+                return Promise.reject(new Error(
+                    `${ errorsNamespace }.invalidFile. Archive: [${ archiveTree }]`
+                )) as any;
+            }
+
             if (archive.files['word/document.xml']) {
                 isDocument = true;
                 meta.fileType = file2html.FileTypes.document;
                 meta.mimeType = documentMimeType;
             } else {
                 // TODO: support Presentations and Spreadsheets
-                return Promise.reject(new Error('Invalid file format')) as any;
+                return getInvalidFileError();
             }
 
             if (isDocument) {
@@ -53,38 +61,24 @@ export default class OOXMLReader extends file2html.Reader {
                 }
             }
 
-            function getInvalidFileError () {
-                const archiveTree: string = Object.keys(archive).join(',\n');
-
-                return Promise.reject(new Error(
-                    `${ errorsNamespace }.invalidFile. Archive: [${ archiveTree }]`
-                )) as any;
-            }
-
             return Promise.all(queue).then(() => {
                 const queue: Promise<any>[] = [];
                 let fileEntry: ArchiveEntry = archive.file('docProps/core.xml');
 
-                if (!fileEntry) {
-                    return getInvalidFileError();
+                if (fileEntry) {
+                    queue.push(fileEntry.async(dataType).then((data: string) => parseCoreProps(data, meta)));
                 }
-
-                queue.push(fileEntry.async(dataType).then((data: string) => {
-                    return parseCoreProps(data, meta);
-                }));
 
                 if (isDocument) {
                     fileEntry = archive.file('word/styles.xml');
 
-                    if (!fileEntry) {
-                        return getInvalidFileError();
+                    if (fileEntry) {
+                        queue.push(fileEntry.async(dataType).then((data: string) => {
+                            return parseDocumentStyles(data);
+                        }).then((documentStyles: string) => {
+                            styles += '\n' + documentStyles;
+                        }));
                     }
-
-                    queue.push(fileEntry.async(dataType).then((data: string) => {
-                        return parseDocumentStyles(data);
-                    }).then((documentStyles: string) => {
-                        styles += '\n' + documentStyles;
-                    }));
 
                     fileEntry = archive.file('word/document.xml');
 
