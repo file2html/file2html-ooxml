@@ -19,11 +19,11 @@ export default class OOXMLReader extends file2html.Reader {
         const {byteLength} = content;
 
         return readArchive(content).then((archive: Archive) => {
-            function getInvalidFileError () {
+            function getInvalidFileError (message?: string) {
                 const archiveTree: string = Object.keys(archive.files || {}).join(',\n');
 
                 return Promise.reject(new Error(
-                    `${ errorsNamespace }.invalidFile. Archive: [${ archiveTree }]`
+                    `${ errorsNamespace }.invalidFile. Archive: [${ archiveTree }].${ message || ''}`
                 )) as any;
             }
 
@@ -58,7 +58,7 @@ export default class OOXMLReader extends file2html.Reader {
                 const documentEntry: ArchiveEntry = documentEntryPath && archive.file(documentEntryPath);
 
                 if (!documentEntry) {
-                    return getInvalidFileError();
+                    return getInvalidFileError(`\ndocumentEntry not found,\n${ documentRelationsContent }`);
                 }
 
                 const documentFilename: string = documentEntryPath.split('/').pop();
