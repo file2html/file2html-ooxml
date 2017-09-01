@@ -42,14 +42,17 @@ export default class OOXMLReader extends file2html.Reader {
                         if (tagName === 'Relationship') {
                             const {Type, Target} = attrs;
 
-                            if (!Target) {
+                            if (!Type || !Target) {
                                 return;
                             }
 
+                            // `Target` might start from an excess slash symbol
+                            const path: string = Target.replace(/^\//, '');
+
                             if (Type.indexOf('officeDocument') > 0) {
-                                documentEntryPath = Target;
+                                documentEntryPath = path;
                             } else if (Type.indexOf('core-properties') > 0) {
-                                corePropertiesEntryPath = Target;
+                                corePropertiesEntryPath = path;
                             }
                         }
                     }
